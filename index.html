@@ -1,124 +1,107 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>LamJingshai</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <div class="logo">
-        <img src="lamjingshai.png" alt="Company Logo" />
-        <h1>LamJingshai</h1>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li class="dropdown">
-            <a href="#">Apps</a>
-            <ul class="dropdown-menu">
-              <li><a href="app1.html">AIO Video downloader</a></li>
-              <li><a href="app2.html">SL VPN</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#">Games</a>
-            <ul class="dropdown-menu">
-              <li><a href="game1.html">WordQuest: Vocab Adventure</a></li>
-            </ul>
-          </li>
-          <li><a href="support.html">Support</a></li>
-          <li><a href="about_us.html">About Us</a></li>
-        </ul>
-      </nav>
-      <div class="search-bar">
-        <input type="text" placeholder="Search" />
-        <button type="submit">Search</button>
-      </div>
-    </header>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Lamjingshai - Software and Tech Company</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-size: 1rem;
+        }
 
-    <main>
-      <section>
-        <br /><br /><br />
-        <h2>Welcome to LamJingshai</h2>
-        <p>
-          Lamjingshai is a software and tech company that specializes in
-          developing innovative solutions to empower businesses and individuals.
-          Our team of experts is dedicated to delivering cutting-edge software,
-          mobile apps, and games.
-        </p>
-      </section>
+        .card {
+            margin-top: 20px;
+        }
 
-      <div class="see-latest-button">
-        <a href="#c">&#8595; SEE LATEST</a>
-      </div>
-      <br /><br /><br /><br /><br /><br />
-      <section class="card-section">
-        <h2>Featured Apps and Games</h2>
-        <div class="card" id="c">
-          <img src="wq_logo.png" alt="Word Quest logo" />
-          <h3>Word Quest : Vocab Adventure</h3>
-          <p>
-            Word Quest: Vocab Adventure is a captivating word game that
-            challenges your vocabulary skills in a thrilling adventure! Dive
-            into an immersive journey where you connect letters at each level to
-            form words and fill in the crossword board. With over 10,000 levels,
-            this addictive word-finding quest is perfect for word game
-            enthusiasts of all ages.
-          </p>
-          <a href="game1.html">&#8595; Read more</a>
+        .see-latest-button a {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 18px;
+        }
+
+        .see-latest-button a:hover {
+            background-color: #0056b3;
+        }
+        .nav {
+            width: 100%;
+        }
+
+        .navbar {
+            padding: 10px 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <main class="container">
+        <section class="text-center mt-5">
+            <h2>Welcome to LamJingshai</h2>
+            <p>
+                Lamjingshai is a software and tech company that specializes in developing innovative solutions to empower businesses and individuals. Our team of experts is dedicated to delivering cutting-edge software, mobile apps, and games.
+            </p>
+        </section>
+
+        <div class="text-center see-latest-button">
+            <a href="#c">&#8595; SEE LATEST</a>
         </div>
 
-        <div class="card">
-          <img src="vd_logo.png" alt="Video Downloader logo" />
-          <h3>AIO Video downloader</h3>
-          <p>
-            All in one video downloader allows you to download videos and social
-            media clips from social webs and popular video sites onto your
-            device at a faster speed.
-          </p>
-          <a href="app1.html">&#8595; Read more</a>
-        </div>
-      </section>
+        <section class="card-section mt-5">
+            <h2 class="text-center">Featured Apps and Games</h2>
+            <div class="row" id="c">
+                <div class="col-md-6">
+                    <div class="card">
+                        <img src="image/wq_logo.png" class="card-img-top" alt="Word Quest logo" />
+                        <div class="card-body">
+                            <h3 class="card-title">Word Quest : Vocab Adventure</h3>
+                            <p class="card-text">
+                                Word Quest: Vocab Adventure is a captivating word game that challenges your vocabulary skills in a thrilling adventure! Dive into an immersive journey where you connect letters at each level to form words and fill in the crossword board. With over 10,000 levels, this addictive word-finding quest is perfect for word game enthusiasts of all ages.
+                            </p>
+                            <a href="game1.html" class="btn btn-primary">&#8595; Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <img src="image/vd_logo.png" class="card-img-top" alt="Video Downloader logo" />
+                        <div class="card-body">
+                            <h3 class="card-title">AIO Video downloader</h3>
+                            <p class="card-text">
+                                All in one video downloader allows you to download videos and social media clips from social webs and popular video sites onto your device at a faster speed.
+                            </p>
+                            <a href="app1.html" class="btn btn-primary">&#8595; Read more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
-      <p>Follow us on:</p>
-      <ul>
-        <li>
-          <a href="https://twitter.com/LamjingshaiL"
-            ><img
-              src="twitter.png"
-              alt="Twitter"
-              height="45px"
-              width="45px"
-          /></a>
-        </li>
-        <li>
-          <a href="https://instagram.com/lamjingshai.co"
-            ><img
-              src="insta.png"
-              alt="Instagram"
-              height="45px"
-              width="45px"
-          /></a>
-        </li>
-        <li>
-          <a href="https://youtube.com/@lamjingshai98"
-            ><img
-              src="youtube.png"
-              alt="Youtube"
-              height="45px"
-              width="45px"
-          /></a>
-        </li>
-      </ul>
-      <ul>
-        <li><a href="privacy_policy.html">Privacy Policy</a></li>
-        <li><a href="term.html">Terms of Service</a></li>
-        <li><a href="support.html">Support</a></li>
-        <li><a href="contact_us.html">Contact Us</a></li>
-      </ul>
-      <p>&copy; 2023 LamJingshai. All rights reserved.</p>
-    </footer>
-  </body>
+    <div id="footer-placeholder"></div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> <!-- Use full version of jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#nav-placeholder").load("nav.html", function(response, status, xhr) {
+                if (status == "error") {
+                    console.log("Error loading nav.html: " + xhr.status + " " + xhr.statusText);
+                }
+            });
+            $("#footer-placeholder").load("footer.html", function(response, status, xhr) {
+                if (status == "error") {
+                    console.log("Error loading footer.html: " + xhr.status + " " + xhr.statusText);
+                }
+            });
+        });
+    </script>
+</body>
 </html>
