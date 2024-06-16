@@ -1,90 +1,150 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="utf-8">
   <title>About Us - Lamjingshai</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
-
   <style>
     body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-}
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
 
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-}
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+    }
 
-header h1 {
-  font-size: 24px;
-  margin: 0;
-}
+    header h1 {
+      font-size: 24px;
+      margin: 0;
+    }
 
-main {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-}
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
 
-section {
-  margin-bottom: 40px;
-}
+    section {
+      margin-bottom: 40px;
+    }
 
-h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
+    h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
 
-p {
-  margin-bottom: 15px;
-}
+    p {
+      margin-bottom: 15px;
+    }
+
+    #map {
+      height: 400px;
+      width: 100%;
+    }
+
+    .team-member {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .team-member img {
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+
+    .team-member h3 {
+      margin: 0;
+    }
+
+    .contact-info {
+      margin-bottom: 20px;
+    }
   </style>
 </head>
 <body>
   <div id="nav-placeholder"></div>
-      <main>
-        <section>
-          <h2>About Us</h2>
-          <p>Lamjingshai is a software and tech company that aims to revolutionize the industry through innovative solutions and exceptional user experiences. We are committed to providing cutting-edge software, mobile apps, and games that empower businesses and individuals alike.</p>
-          <p>Our team of skilled professionals is passionate about delivering high-quality products that meet the evolving needs of our clients. We strive to stay ahead of the curve by embracing the latest technologies and trends in the software and tech industry.</p>
-          <p>At Lamjingshai, we believe in the power of collaboration and teamwork. We work closely with our clients to understand their goals and objectives, ensuring that our solutions are tailored to their specific requirements. Our focus is on delivering value, efficiency, and innovation.</p>
-          <p>Customer satisfaction is at the core of everything we do. We are dedicated to providing excellent customer service and support throughout the entire journey, from initial concept to post-launch maintenance. Our goal is to build long-lasting relationships with our clients and partners based on trust and mutual success.</p>
-        </section>
-    
-        <section>
-          <h2>Our Mission</h2>
-          <p>Our mission is to empower businesses and individuals by creating innovative software solutions that enhance productivity, efficiency, and user experiences. We strive to deliver exceptional products that drive growth and success for our clients.</p>
-        </section>
-    
-        <section>
-          <h2>Our Vision</h2>
-          <p>Our vision is to become a leading software and tech company globally, known for our cutting-edge solutions, industry expertise, and commitment to customer satisfaction. We aim to inspire and empower individuals and businesses to reach their full potential through the power of technology.</p>
-        </section>
-      </main>
 
-      <div id="footer-placeholder"></div>
+  <main>
+    <section>
+      <h2>About Us</h2>
+      <p>Lamjingshai is a software and tech company that aims to revolutionize the industry through innovative solutions and exceptional user experiences. We are committed to providing cutting-edge software, mobile apps, and games that empower businesses and individuals alike.</p>
+      <p>Our team of skilled professionals is passionate about delivering high-quality products that meet the evolving needs of our clients. We strive to stay ahead of the curve by embracing the latest technologies and trends in the software and tech industry.</p>
+      <p>At Lamjingshai, we believe in the power of collaboration and teamwork. We work closely with our clients to understand their goals and objectives, ensuring that our solutions are tailored to their specific requirements. Our focus is on delivering value, efficiency, and innovation.</p>
+      <p>Customer satisfaction is at the core of everything we do. We are dedicated to providing excellent customer service and support throughout the entire journey, from initial concept to post-launch maintenance. Our goal is to build long-lasting relationships with our clients and partners based on trust and mutual success.</p>
+    </section>
 
-      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> <!-- Use full version of jQuery -->
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-      <script>
-          $(document).ready(function() {
-              $("#nav-placeholder").load("nav.html", function(response, status, xhr) {
-                  if (status == "error") {
-                      console.log("Error loading nav.html: " + xhr.status + " " + xhr.statusText);
-                  }
-              });
-              $("#footer-placeholder").load("footer.html", function(response, status, xhr) {
-                  if (status == "error") {
-                      console.log("Error loading footer.html: " + xhr.status + " " + xhr.statusText);
-                  }
-              });
+    <section>
+      <h2>Our Mission</h2>
+      <p>Our mission is to empower businesses and individuals by creating innovative software solutions that enhance productivity, efficiency, and user experiences. We strive to deliver exceptional products that drive growth and success for our clients.</p>
+    </section>
+
+    <section>
+      <h2>Our Vision</h2>
+      <p>Our vision is to become a leading software and tech company globally, known for our cutting-edge solutions, industry expertise, and commitment to customer satisfaction. We aim to inspire and empower individuals and businesses to reach their full potential through the power of technology.</p>
+    </section>
+
+    <section>
+      <h2>Our Team</h2>
+      <div class="team-member">
+        <img src="team_member_1.jpg" alt="Lam Lyngdoh" width="100" height="100">
+        <div>
+          <h3>Lam Lyngdoh</h3>
+          <p>CEO & Founder</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Contact Us</h2>
+      <div class="contact-info">
+        <p><strong>Email:</strong> lamjingshailyngdohm@gmail.com</p>
+        <p><strong>Phone:</strong> +91 7085719618</p>
+        <p><strong>Address:</strong> Rtiang, Ri Bhoi Distict, Meghalaya 783105, India</p>
+      </div>
+      <div id="map"></div>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> <!-- Use full version of jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+      $(document).ready(function() {
+          $("#nav-placeholder").load("nav.html", function(response, status, xhr) {
+              if (status == "error") {
+                  console.log("Error loading nav.html: " + xhr.status + " " + xhr.statusText);
+              }
           });
-      </script>
+          $("#footer-placeholder").load("footer.html", function(response, status, xhr) {
+              if (status == "error") {
+                  console.log("Error loading footer.html: " + xhr.status + " " + xhr.statusText);
+              }
+          });
+      });
+
+      // Initialize and add the map
+      function initMap() {
+        var location = {lat: 25.7811500, lng: 91.9208850};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: location
+        });
+        var marker = new google.maps.Marker({
+          position: location,
+          map: map
+        });
+      }
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
 </body>
 </html>
