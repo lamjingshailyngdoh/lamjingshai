@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lamjingshai - SL VPN</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            width: 100%;
+        }
+        .app-card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .app-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .app-card h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .app-card p {
+            margin-bottom: 15px;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .app-logo {
+            max-width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .game-screenshot img {
+            max-width: 100px;
+            height: auto;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .game-screenshot {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+      .feature-image {
+        max-height: 80vh;
+        display: flex;
+        width: 100%;
+        min-height: 80vh;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+</head>
+<body>
+    <div id="navbar"></div>
+    <img src="images/feature_slvpn.png" alt="Feature Image" class="feature-image">
+    <div class="container mt-5">
+        <h1 class="text-center my-5">SL VPN</h1>
+
+        <div class="app-card">
+            <div class="text-center">
+                <img src="images/vpn_logo.png" alt="SL VPN Logo" class="app-logo"/>
+            </div>
+
+            <h2>SL VPN</h2>
+            <p>
+                Protect your identity and online privacy, by using a secure connection
+                to a virtual private network(VPN) on any device with SL VPN. SL VPN is
+                the free unlimited bandwidth and easiest way to unblock websites and
+                protect your privacy with a new, anonymous IP address. Stay anonymous
+                as you browse the internet, enjoy the strongest web encryption, no
+                matter where you are in the world with our secure SL VPN.
+            </p>
+            <p>Enjoy the online security and secure connection of a VPN and forget about online privacy concerns. Now, you can have it all for free.</p>
+            <p>With our SL VPN app you can:</p>
+            <ul>
+                <li>Unblock websites or apps with a single click</li>
+                <li>Unlimited free servers</li>
+                <li>Surf anonymously with a new IP address</li>
+                <li>Access Facebook, Instagram, YouTube, Twitter & other social media were restricted</li>
+                <li>Hide IP and prevent online tracking</li>
+                <li>Use the Internet as if you were in any country</li>
+                <li>Avoid censorship</li>
+                <li>Bypass firewalls at school and at work to surf without limits</li>
+                <li>Enjoy automatic WiFi security and identity protection over unprotected WiFi hotspots and public networks with a hotspot shield</li>
+                <li>Browse with speeds faster to enjoy a better internet</li>
+                <li>Surf easy and stop hackers and snoopers from prying in on your personal data</li>
+            </ul>
+            
+            <div class="game-screenshot">
+                <img src="images/slvpn1.jpg" alt="App Screenshot"/>
+                <img src="images/slvpn2.jpg" alt="App Screenshot"/>
+                <img src="images/slvpn3.jpg" alt="App Screenshot"/>
+                <img src="images/slvpn4.jpg" alt="App Screenshot"/>
+            </div>
+            <p>
+                Download our free unlimited SL VPN app to get online security and freedom on the web with a single tap!
+            </p>
+            <div class="text-center">
+                <a href="https://play.google.com/store/apps/details?id=com.slvpn.vpnfree">
+                    <img src="images/google_play.png" alt="Google Play Logo" style="max-width: 200px; height: auto;"/>
+                </a>
+            </div>
+        </div>
+
+        <!-- Add more app cards as needed -->
+    </div>
+
+    <div id="footer"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Load Header & Footer Dynamically -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("components/header.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("navbar").innerHTML = data;
+                    initializeDropdowns();
+                });
+
+            fetch("components/footer.html")
+                .then(response => response.text())
+                .then(data => document.getElementById("footer").innerHTML = data);
+        });
+
+        function initializeDropdowns() {
+            let dropdowns = document.querySelectorAll(".nav-item.dropdown");
+
+            dropdowns.forEach(function (dropdown) {
+                let menu = dropdown.querySelector(".dropdown-menu");
+                let timeout;
+
+                dropdown.addEventListener("mouseenter", function () {
+                    clearTimeout(timeout);
+                    menu.classList.add("show");
+                    menu.style.display = "flex"; // Keeps it visible
+                });
+
+                dropdown.addEventListener("mouseleave", function () {
+                    timeout = setTimeout(() => {
+                        if (!menu.matches(':hover')) {
+                            menu.classList.remove("show");
+                            menu.style.display = "none";
+                        }
+                    }, 300); 
+                });
+
+                menu.addEventListener("mouseenter", function () {
+                    clearTimeout(timeout);
+                });
+
+                menu.addEventListener("mouseleave", function () {
+                    timeout = setTimeout(() => {
+                        if (!dropdown.matches(':hover')) {
+                            menu.classList.remove("show");
+                            menu.style.display = "none";
+                        }
+                    }, 300); 
+                });
+            });
+
+            // Ensure dropdowns work on mobile
+            document.querySelectorAll(".navbar-toggler").forEach(toggler => {
+                toggler.addEventListener("click", function () {
+                    document.querySelectorAll(".dropdown-menu").forEach(menu => {
+                        menu.style.display = ""; // Reset to Bootstrap default behavior
+                    });
+                });
+            });
+        }
+    </script>
+
+</body>
+</html>

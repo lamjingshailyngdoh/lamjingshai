@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamjingshai Store</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .section {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            margin: 20px 0px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .section h3 {
+            font-size: medium;
+            font-weight: bold;
+        }
+        .section p {
+            font-size: small;
+        }
+        .product {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .product img {
+            max-width: 100px;
+            margin-right: 20px;
+        }
+        .product-details {
+            flex: 1;
+        }
+        .product-actions {
+            text-align: right;
+        }
+        .product-actions button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .product-actions button:hover {
+            background-color: #555;
+        }
+        .container {
+            margin-top: 80px;
+        }
+    </style>
+</head>
+<body>    
+    <div id="navbar"></div>
+    <div class="container">
+        <div class="section">
+            <h2>LAMJINGSHAI Store</h2>
+            <hr>
+            <div class="product">
+                <img src="images/wq_logo.png" alt="Word Quest Logo">
+                <div class="product-details">
+                    <h3>Word Quest : Vocab Adventure</h3>
+                    <p>Word Quest : Vocab Adventure is a captivating word game that challenges your vocabulary skills in a thrilling adventure! Dive into an immersive journey where you connect letters at each level to form words and fill in the crossword board. With over 10,000 levels, this addictive word-finding quest is perfect for word game enthusiasts of all ages.</p>
+                </div>
+                <div class="product-actions">
+                    <a href="wordquest.html" class="btn btn-primary">Download</a>
+                </div>
+            </div>
+            <hr>
+            <div class="product">
+                <img src="images/student_helper_logo.png" alt="Student Helper Logo">
+                <div class="product-details">
+                    <h3>Student Helper App</h3>
+                    <p>Student Helper App is your ultimate companion for exam preparation and academic growth. Designed for students, this app allows you to attempt quizzes uploaded by your teachers, tailored to various subjects and topics. Each question comes with a detailed explanation for the correct answer, helping you understand and learn effectively.</p>
+                </div>
+                <div class="product-actions">
+                    <a href="student_helper.html" class="btn btn-primary">Download</a>
+                </div>
+            </div>
+            <hr>
+            <div class="product">
+                <img src="images/vpn_logo.png" alt="VPN Logo">
+                <div class="product-details">
+                    <h3>SL VPN App</h3>
+                    <p>Protect your identity and online privacy, by using a secure connection to a virtual private network(VPN) on any device with SL VPN. SL VPN is the free unlimited bandwidth and easiest way to unblock websites and protect your privacy with a new, anonymous IP address. Stay anonymous as you browse the internet, enjoy the strongest web encryption, no matter where you are in the world with our secure SL VPN.</p>
+                </div>
+                <div class="product-actions">
+                    <a href="slvpn.html" class="btn btn-primary">Download</a>
+                </div>
+            </div>
+            <hr>
+            <div class="product">
+                <img src="images/aio_downloader_logo.png" alt="AIO Downloader Logo">
+                <div class="product-details">
+                    <h3>AIO Downloader</h3>
+                    <p>AIO Downloader is your one-stop solution for downloading videos, images, and other media from various social media platforms and websites. With its user-friendly interface, you can easily download content from Facebook, Instagram, Twitter, and more. Enjoy fast and secure downloads with AIO Downloader, making it the perfect tool for all your media needs.</p>
+                </div>
+                <div class="product-actions">
+                    <a href="aio_downloader.html" class="btn btn-primary">Download</a>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+    <div id="footer"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Load Header & Footer Dynamically -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("components/header.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("navbar").innerHTML = data;
+                    initializeDropdowns();
+                });
+
+            fetch("components/footer.html")
+                .then(response => response.text())
+                .then(data => document.getElementById("footer").innerHTML = data);
+        });
+
+        function initializeDropdowns() {
+            let dropdowns = document.querySelectorAll(".nav-item.dropdown");
+
+            dropdowns.forEach(function (dropdown) {
+                let menu = dropdown.querySelector(".dropdown-menu");
+                let timeout;
+
+                dropdown.addEventListener("mouseenter", function () {
+                    clearTimeout(timeout);
+                    menu.classList.add("show");
+                    menu.style.display = "flex"; // Keeps it visible
+                });
+
+                dropdown.addEventListener("mouseleave", function () {
+                    timeout = setTimeout(() => {
+                        if (!menu.matches(':hover')) {
+                            menu.classList.remove("show");
+                            menu.style.display = "none";
+                        }
+                    }, 300); // Slight delay prevents flickering
+                });
+
+                menu.addEventListener("mouseenter", function () {
+                    clearTimeout(timeout);
+                });
+
+                menu.addEventListener("mouseleave", function () {
+                    timeout = setTimeout(() => {
+                        if (!dropdown.matches(':hover')) {
+                            menu.classList.remove("show");
+                            menu.style.display = "none";
+                        }
+                    }, 300); 
+                });
+            });
+
+            // Ensure dropdowns work on mobile
+            document.querySelectorAll(".navbar-toggler").forEach(toggler => {
+                toggler.addEventListener("click", function () {
+                    document.querySelectorAll(".dropdown-menu").forEach(menu => {
+                        menu.style.display = ""; // Reset to Bootstrap default behavior
+                    });
+                });
+            });
+        }
+    </script>
+
+</body>
+</html>

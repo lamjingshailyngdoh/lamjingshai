@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lamjingshai - Support</title>
+
+    <!-- Bootstrap & Fonts -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+
+    <style>
+
+        .contact-container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .contact-header h2 {
+            font-size: 28px;
+            color: #007bff;
+        }
+
+        .contact-header p {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+            background: #f1f1f1;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .contact-item i {
+            font-size: 20px;
+            color: #007bff;
+        }
+
+        .faq-section {
+            margin-top: 40px;
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .faq-header h2 {
+            font-size: 24px;
+            color: #007bff;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-item h5 {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .faq-item p {
+            font-size: 16px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <!-- Load Header -->
+    <div id="navbar"></div>
+
+    <div class="container">
+        <div class="contact-container">
+            <div class="contact-header">
+                <h2><i class="fas fa-envelope"></i> Get in Touch</h2>
+                <p>Have questions? We'd love to hear from you!</p>
+            </div>
+
+            <!-- Contact Details -->
+            <div class="contact-details">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email: <a href="mailto:lamjingshailyngdohm@gmail.com">lamjingshailyngdohm@gmail.com</a></span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>Phone: <a href="tel:+919362696449">+91 9362696449</a></span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Rtiang, Ri Bhoi District, Meghalaya, India</span>
+                </div>
+                <div class="contact-item social-icons">
+                    <a href="https://x.com/Lamjingshai_co" target="_blank" rel="noopener" title="Follow us on X"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://instagram.com/lamjingshai.co" target="_blank" rel="noopener" title="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com/@lamjingshai98" target="_blank" rel="noopener" title="Subscribe to our YouTube channel"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <div class="faq-header">
+                    <h2>Frequently Asked Questions</h2>
+                </div>
+                <div class="faq-item"></div>
+                    <h5>What services do you offer?</h5>
+                    <p>We offer software development, mobile apps, eCommerce solutions, and electronic hardware innovations.</p>
+                </div>
+                <div class="faq-item">
+                    <h5>How can I contact support?</h5>
+                    <p>You can reach us at lamjingshailyngdohm@gmail.com or call +91 9362696449.</p>
+                </div>
+                <div class="faq-item">
+                    <h5>Where are you located?</h5>
+                    <p>We are located in Rtiang, Ri Bhoi District, Meghalaya, India.</p>
+                </div>
+                <div class="faq-item">
+                    <h5>What is your refund policy?</h5>
+                    <p>Our refund policy allows returns within 14 days of purchase. Please check our website for details.</p>
+                </div>
+            </div>
+
+            <!-- Chatbot UI -->
+            <div id="chatbot">
+              <div id="chat-header">
+                  Chat with Us
+                  <button id="close-chat">&times;</button>
+              </div>
+              <div id="chat-body"></div>
+              <div id="chat-footer">
+                  <input type="text" id="user-input" placeholder="Type a message...">
+                  <button id="send-btn" title="Send"><i class="fas fa-paper-plane"></i></button>
+              </div>
+            </div>
+            <!-- Floating Chat Button -->
+            <div id="chat-container">
+                <div id="chat-text">Ask Question</div>
+                <button id="chat-btn" title="Chat with us">
+                    <i class="fas fa-comment-dots"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load Footer -->
+    <div id="footer"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          fetch("components/header.html")
+              .then(response => response.text())
+              .then(data => {
+                  document.getElementById("navbar").innerHTML = data;
+                  initializeDropdowns(); // Initialize dropdowns after loading header
+              });
+
+          fetch("components/footer.html")
+              .then(response => response.text())
+              .then(data => document.getElementById("footer").innerHTML = data);
+
+          // Automatically open the chatbot
+          const chatbot = document.getElementById("chatbot");
+          chatbot.style.display = "flex";
+          addMessage("Hello! Welcome to Lamjingshai. How can I assist you today?", "bot-message");
+      });
+
+      function initializeDropdowns() {
+          let dropdowns = document.querySelectorAll(".nav-item.dropdown");
+
+          dropdowns.forEach(function (dropdown) {
+              let menu = dropdown.querySelector(".dropdown-menu");
+              let timeout;
+
+              dropdown.addEventListener("mouseenter", function () {
+                  clearTimeout(timeout);
+                  menu.classList.add("show");
+                  menu.style.display = "flex"; // Keeps it visible
+              });
+
+              dropdown.addEventListener("mouseleave", function () {
+                  timeout = setTimeout(() => {
+                      if (!menu.matches(':hover')) {
+                          menu.classList.remove("show");
+                          menu.style.display = "none"; // Hides after a slight delay
+                      }
+                  }, 300); // Slight delay prevents flickering
+              });
+
+              menu.addEventListener("mouseenter", function () {
+                  clearTimeout(timeout);
+              });
+
+              menu.addEventListener("mouseleave", function () {
+                  timeout = setTimeout(() => {
+                      if (!dropdown.matches(':hover')) {
+                          menu.classList.remove("show");
+                          menu.style.display = "none"; // Hides after a slight delay
+                      }
+                  }, 300); // Slight delay prevents flickering
+              });
+          });
+
+          // Ensure dropdowns work on mobile
+          document.querySelectorAll(".navbar-toggler").forEach(toggler => {
+              toggler.addEventListener("click", function () {
+                  document.querySelectorAll(".dropdown-menu").forEach(menu => {
+                      menu.style.display = ""; // Reset to Bootstrap default behavior
+                  });
+              });
+          });
+      }
+
+      function addMessage(text, className) {
+          const chatBody = document.getElementById("chat-body");
+          let messageDiv = document.createElement("div");
+          messageDiv.classList.add(className);
+          messageDiv.innerText = text;
+          chatBody.appendChild(messageDiv);
+          chatBody.scrollTop = chatBody.scrollHeight;
+      }
+  </script>
+</body>
+</html>
