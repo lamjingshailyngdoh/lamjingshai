@@ -13,6 +13,23 @@ body {
     margin: 0% 10%;
     background-color: rgb(6, 6, 6);
     z-index: 1000;
+    padding: 10px;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler.collapsed .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M7 7l16 16M7 23L23 7'/%3E%3C/svg%3E");
 }
 
 .navbar-brand .logo {
@@ -40,6 +57,17 @@ body {
     font-size: 1.0rem;
     color: white;
     margin-left: 10px;
+}
+
+.navbar .dropdown-toggle::after {
+    display: inline-block;
+    margin-left: .255em;
+    vertical-align: .255em;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
 }
 
 /* Dropdown Menu - Full Width & Animated */
@@ -107,6 +135,76 @@ body {
     }
 }
 
+@media (max-width: 992px) {
+    .navbar .dropdown-menu {
+        display: none;
+    }
+
+    .navbar .dropdown-toggle::after {
+        content: "\f0d7"; /* FontAwesome down arrow */
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        margin-left: 5px;
+    }
+
+    .navbar .dropdown-toggle[aria-expanded="true"] + .dropdown-menu {
+        display: block;
+    }
+
+    .navbar-toggler.collapsed .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    .footer .row:first-child {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .footer .footer-bottom {
+        justify-content: flex-start;
+        text-align: left;
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .footer .footer-links {
+        text-align: left;
+    }
+
+    .footer-logo {
+        margin-top: 10px;
+        text-align: right;
+        align-self: flex-end;
+    }
+}
+
+@media (max-width: 992px) {
+    .footer .row:first-child {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .footer .footer-bottom {
+        justify-content: flex-start;
+        text-align: left;
+        flex-direction: column;
+    }
+
+    .footer .footer-links {
+        text-align: left;
+    }
+
+    .footer-logo {
+        margin-top: 10px;
+        text-align: left;
+        align-self: flex-start;
+    }
+    
+}
+
 /* Hero Section */
 .hero-section {
     position: relative;
@@ -138,6 +236,9 @@ body {
     font-weight: 300;
     color: black;
 }
+.card-img-top{
+    padding: 10px;
+}
 
 /* Buttons */
 .btn-primary {
@@ -164,8 +265,9 @@ main {
 .footer {
     background-color: black;
     color: white;
-    padding: 20px 100px;
+    padding: 20px 20px;
     font-size: small;
+    text-align: center;
 }
 
 .footer a {
@@ -180,13 +282,14 @@ main {
 /* Social Media & Google Play */
 .footer .row:first-child {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
 }
 
 .social-icons {
     display: flex;
     gap: 15px;
+    justify-content: center;
 }
 
 .social-icon {
@@ -201,25 +304,27 @@ main {
 }
 
 .google-play {
-    max-width: 200px;
+    max-width: 150px;
     height: auto;
+    margin: 10px;
 }
 
 /* Links Row */
 .footer-links {
-    margin: 20px 0;
+    margin: 10px 0;
+    text-align: left;
 }
 
 .footer-links a {
-    margin: 0 10px;
+    margin: 0 5px;
 }
 
 /* Address & Logo */
 .footer-bottom {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    text-align: center;
+    text-align: left;
     flex-wrap: wrap;
 }
 
@@ -228,8 +333,9 @@ main {
 }
 
 .footer-logo {
-    width: 80px;
+    width: 60px;
     height: auto;
+    margin-top: 10px;
 }
 
 /* Responsive Design */
@@ -255,15 +361,14 @@ main {
 
     .footer .row:first-child {
         flex-direction: column;
-        text-align: center;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
+        text-align: left;
     }
 
     .footer-logo {
         margin-top: 10px;
+    }
+    .footer-bottom {
+        text-align: left;
     }
 
     /* Ensure dropdown works properly on mobile */
@@ -271,6 +376,7 @@ main {
         display: block;
         width: auto;
     }
+    
 }
 
 /* Chatbot Styles */
